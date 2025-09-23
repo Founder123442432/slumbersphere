@@ -23,14 +23,16 @@ export default function NavBar() {
 
   return (
     <header className="flex relative shadow-lg py-4 px-4 sm:px-6 bg-[#10141d] border-b-2 border-white min-h-[75px] tracking-wide z-50">
-      <div className="flex flex-wrap items-center gap-5 w-full max-w-screen-xl mx-auto">
+      <div className="flex  flex-wrap items-center gap-5 w-full max-w-screen-xl mx-auto">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <img 
+       
+            <img 
             src="/logo.png" 
             alt="Logo"
             className="w-40 animate-pulse hover:scale-105 transition-transform duration-300" 
           /> 
+        
         </Link>
 
         {/* Desktop Navigation */}

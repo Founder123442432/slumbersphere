@@ -5,7 +5,7 @@ import { useParams } from "next/navigation"
 import Categories from "./categories"
 import ListenItem from "./listenItem"
 
-export default function PlayTheBestFrom() {
+export default function PlayTheBestFrom({ctr}) {
     const [ListenItemState,setListenItemState]=useState(null)
     const {soundCollection}=use(AppContext)
     const params=useParams()
@@ -18,6 +18,6 @@ export default function PlayTheBestFrom() {
 {FsoundCollection.length==0?<span className="flex text-2xl text-gray-400 w-full justify-center items-center"> Hmm... looks like this one is empty </span>:<>{FsoundCollection.map((el,i)=> <Categories Open={()=>setListenItemState(el)}  img="/disc.jpg" tittle={el.name} audio={el.audio} key={i}/>)}
 </>}
 
-   {ListenItemState&&<ListenItem sound={ListenItemState} close={()=>setListenItemState(null)}/>}
+   {ListenItemState&&<ListenItem ListenItemState={ListenItemState} ctr={ctr} sound={ListenItemState} close={()=>setListenItemState(null)}/>}
    </div>
 }
